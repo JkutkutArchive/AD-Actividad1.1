@@ -2,9 +2,11 @@ package ej3.main;
 
 import ej3.model.Coche;
 
+import java.io.RandomAccessFile;
 import java.util.Random;
 
 public class Main {
+    private static final String FILENAME = "res/ej3/coches.randdat";
     private static final int N = 10;
 
     // Random values
@@ -20,6 +22,19 @@ public class Main {
 
         for (Coche c : coches) {
             System.out.println(c);
+        }
+
+        System.out.println("Guardando coches en fichero...");
+        RandomAccessFile f;
+
+        try {
+            f = new RandomAccessFile(FILENAME, "rw");
+            for (Coche c : coches) {
+//                TODO
+            }
+            f.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
