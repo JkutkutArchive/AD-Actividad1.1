@@ -13,13 +13,10 @@ public class LeerProducto {
         Object p;
         while (true) {
             try {
-//                System.out.println("Obtaining Producto");
                 p = ios.readObject();
-                if (p == null)
-                    break;
                 if (p instanceof Producto) {
+                    System.out.print(".");
                     lst.add((Producto) p);
-//                    System.out.println("Product added to list");
                 }
                 else
                     throw new ClassNotFoundException("The objects here should be of class Producto");
@@ -35,10 +32,12 @@ public class LeerProducto {
         }
         ios.close();
 
-        // return (Producto[]) lst.toArray(); // This doesn't work
-        Producto[] arr = new Producto[lst.size()];
-        for (int i = 0; i < lst.size(); i++)
-            arr[i] = lst.get(i);
-        return arr;
+        Producto[] arr = new Producto[0];
+        return lst.toArray(arr);
+
+//        Producto[] arr = new Producto[lst.size()];
+//        for (int i = 0; i < lst.size(); i++)
+//            arr[i] = lst.get(i);
+//        return arr;
     }
 }
