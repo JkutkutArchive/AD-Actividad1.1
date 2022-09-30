@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Main {
-    private static final int N = 1;
+    private static final int N = 2;
     private static final String FILENAME = "res/ej1/productos.bat";
 
     private static SuperScanner sc;
