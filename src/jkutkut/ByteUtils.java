@@ -97,6 +97,12 @@ public class ByteUtils {
         return s.getBytes();
     }
 
+    public static byte[] toBytes(String s, int length) {
+        StringBuffer sb = new StringBuffer(s);
+        sb.setLength(length);
+        return toBytes(sb.toString());
+    }
+
     // From byte array
 
     public static byte toByte(byte[] bytes) {
@@ -147,10 +153,12 @@ public class ByteUtils {
         for (int i = copyLength; i < length; i++) {
             dest[destOffset + i] = 0;
         }
+//        System.out.println("destOffset: " + destOffset + " srcOffset: " + srcOffset + " length: " + length + " copyLength: " + copyLength + " ");
         return destOffset + length;
     }
 
     public static int memcpy(byte[] dest, int destOffset, byte[] src) {
+//        System.out.println("destOffset: " + destOffset + ", src.length: " + src.length);
         return memcpy(dest, destOffset, src, 0, src.length);
     }
 
