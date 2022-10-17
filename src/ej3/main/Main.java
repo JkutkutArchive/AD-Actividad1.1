@@ -98,6 +98,7 @@ public class Main {
         );
         int year = r.nextInt(MIN_YEAR, MAX_YEAR + 1);
         float price = Math.round(r.nextFloat(MAX_PRICE / MIN_PRICE)) * MIN_PRICE;
+//        return new Coche("test", year, price);
         return new Coche(model, year, price);
     }
 }
